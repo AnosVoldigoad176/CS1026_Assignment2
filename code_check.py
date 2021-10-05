@@ -46,17 +46,22 @@ def UPC_code(num):
     sum_digit = 0
     index = 0
     num_temp = str(num)[:-1]
+    len_nt = len(num_temp)
 
-    for digit in num_temp:
-        if int(digit) % 2 == 0:
-            sum_digit += int(digit) * 1
-        elif int(digit) % 2 != 0:
-            sum_digit += int(digit) * 3
-    print(sum_digit)
+    for digit in num_temp:                  # For loop to go through all the number in num_temp
+        if (index + 1) % 2 != 0:            # If number position is odd
+            sum_digit += int(digit) * 3     # Sum = digit * 3
+            if index < len_nt:              # Increase index till end
+                index += 1
+        elif (index + 1) % 2 == 0:          # If number position is even
+            sum_digit += int(digit) * 1     # Sum = digit * 1
+            if index < len_nt:
+                index += 1
+    # print(sum_digit)
 
     res_digit = sum_digit % 10
     if 1 <= res_digit <= 9:
-        res_digit = 10 - res_digit
+        res_digit = 10 - res_digit      # Res digit meet condition = 10 - res digit
 
     if res_digit == num % 10:
         return True
@@ -64,10 +69,4 @@ def UPC_code(num):
         return False
     else:
         print("Something went wrong")
-
 # End UPC_code()
-
-
-print(basic_code(24528348))
-print(positional_code(434191))
-print(UPC_code(24528344))
