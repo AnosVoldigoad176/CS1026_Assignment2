@@ -8,9 +8,9 @@ def basic_code(num):
     # print(sum_digit)
 
     # Check last digit
-    if sum_digit % 10 != num % 10:
+    if sum_digit % 10 != int(num) % 10:
         return False
-    elif sum_digit % 10 == num % 10:
+    elif sum_digit % 10 == int(num) % 10:
         return True
     else:
         print("Something went wrong.")
@@ -23,19 +23,19 @@ def positional_code(num):
     sum_digit = 0
     index = 0
     num_temp = str(num)[:-1]
-    len_nt = len(num_temp)
+    len_nt = len(num)
 
-    for digit in num_temp:                              # For loop to go through all the number in num_temp
-        if num_temp[index] == str(digit):               # If num_temp at the index position = digit
+    for digit in num_temp:                                   # For loop to go through all the number in num_temp
+        if num_temp[index] == digit:                         # If num_temp at the index position = digit
             sum_digit += int(digit) * (index + 1)       # Then calculate sum
             if index < len_nt:                          # If index is smaller than length of num_temp
                 index += 1                              # Increase index by 1
     # print(sum_digit)
 
     # P.C check
-    if sum_digit % 10 != num % 10:
+    if sum_digit % 10 != int(num) % 10:
         return False
-    elif sum_digit % 10 == num % 10:
+    elif sum_digit % 10 == int(num) % 10:
         return True
     else:
         print("Something went wrong.")
@@ -46,9 +46,9 @@ def UPC_code(num):
     sum_digit = 0
     index = 0
     num_temp = str(num)[:-1]
-    len_nt = len(num_temp)
+    len_nt = len(num)
 
-    for digit in num_temp:                  # For loop to go through all the number in num_temp
+    for digit in num_temp:                       # For loop to go through all the number in num_temp
         if (index + 1) % 2 != 0:            # If number position is odd
             sum_digit += int(digit) * 3     # Sum = digit * 3
             if index < len_nt:              # Increase index till end
@@ -63,9 +63,9 @@ def UPC_code(num):
     if 1 <= res_digit <= 9:
         res_digit = 10 - res_digit      # Res digit meet condition = 10 - res digit
 
-    if res_digit == num % 10:
+    if res_digit == int(num) % 10:
         return True
-    elif res_digit != num % 10:
+    elif res_digit != int(num) % 10:
         return False
     else:
         print("Something went wrong")
