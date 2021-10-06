@@ -1,3 +1,11 @@
+"""
+Author: Anh Duc Vu - Harry Vu
+Description: Code check for UPC, Basic and Positional
+Last modified: Oct 6, 2021
+"""
+
+
+
 import code_check as cc
 
 bc_list = ["None"]
