@@ -1,6 +1,7 @@
 def basic_code(num):
 
     # Calculate sum of digit of the number for B.C algo
+    num = num.strip()
     sum_digit = 0
     num_temp = str(num)[:-1]    # Delete last digit and use new number as num_temp
     for digit in num_temp:      # For loop to calculate sum of num_temp
@@ -20,6 +21,7 @@ def basic_code(num):
 def positional_code(num):
 
     # Calculate sum of digit of the number with P.C algorithm
+    num = num.strip()
     sum_digit = 0
     index = 0
     num_temp = str(num)[:-1]
@@ -43,6 +45,7 @@ def positional_code(num):
 
 
 def UPC_code(num):
+    num = num.strip()
     sum_digit = 0
     index = 0
     num_temp = str(num)[:-1]
